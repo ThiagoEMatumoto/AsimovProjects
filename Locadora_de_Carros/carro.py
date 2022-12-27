@@ -1,4 +1,4 @@
-from locadora import cars, rented
+from locadora import *
 
 class car:
     def __init__(self, name, mark, year, price):
