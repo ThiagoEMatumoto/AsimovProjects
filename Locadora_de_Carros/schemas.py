@@ -1,10 +1,11 @@
 from locadora import *
+from time import sleep
 
 
 def welcome():
-    print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
+    print('=============================')
     print(' WELCOME TO SUPER CAR RENTAL ')
-    print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
+    print('=============================')
     print('          _______')
     print('         //  ||\ \ ')
     print('   _____//___||_\ \___')
@@ -13,30 +14,40 @@ def welcome():
     print('  ___\_/________\_/______ \n')
     print(' [1] - Login ')
     print(' [2] - Register \n')
-    answer = int(input())
+    answer = input()
     return answer
 
 def login():
-    print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
+    print('=============================')
     print('    LOGIN WITH YOUR COUNT    ')
-    print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
+    print('=============================')
     user =  input("Login: ")
     password =  input("Password: ")
     user_login = (user, password)
-    return user_login
+    if user_login in users:
+        return True
+    else: 
+        return False
+
     
 def register():
-    print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
+    print('=============================')
     print('     REGISTER A NEW COUNT    ')
-    print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
+    print('=============================')
     user =  input("Login: ")
     password =  input("Password: ")
     confirm_password =  input("Confirm your password: ")
-    try:
-        password == confirm_password
-    except:
-        pass
-    user_login = (user, password)
+    if password == confirm_password and user :
+        users.append((user,password))
+        login()
+    elif password != confirm_password:
+        print('Passwords are not the same')
+        sleep(4)
+        register()
+    else:
+        print('User already registered')
+        sleep(4)
+        register()
 
     
     
