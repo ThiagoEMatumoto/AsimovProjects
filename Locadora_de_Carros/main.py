@@ -1,4 +1,6 @@
 import os
+from time import sleep
+
 
 carros = [
         ("Chevrolet Tracker", 120), 
@@ -10,31 +12,44 @@ carros = [
         ("Fiat Mobi", 70), 
         ("Fiat Pulse", 130)
         ]
-alugados = []
 
+alugados = []
 
 
 def mostrar_lista_de_carros(lista_de_carros):
     for i, car in enumerate(lista_de_carros):
         print("[{}] {} - R$ {} /dia.".format(i, car[0], car[1]))
         
-
-while True:
-    os.system("clear")
-    print("=========")
+def schema_inicial():
+    print("===============================")
     print("Bem vindo à locadora de carros!")
-    print("=========")
+    print("===============================")
     print("O que deseja fazer?")
-    print("0 - Mostrar portifólio | 1 - Alugar um carro | 2 - Devolver um carro")
-    op = int(input())
+    print("0 - Mostrar portifólio")
+    print("1 - Alugar um carro")
+    print("2 - Devolver um carro")    
+    option = int(input())
+    return option
 
+def action_validator(action):
+    if not 0 <= action <= 2:
+        print("Entrada inválida, por favor colocar uma das opções disponíveis")
+        sleep(2)
+        main()
+
+def main():
     os.system("clear")
-    if op == 0:
+    action = schema_inicial()
+    
+    action_validator(action)
+    
+    os.system("clear")
+    if action == 0:
         mostrar_lista_de_carros(carros)
 
-    elif op == 1:
+    elif action == 1:
         mostrar_lista_de_carros(carros)
-        print("==========")
+        print("===============================")
         print("Escolha o código do carro:")
         cod_car = int(input())
         print("Por quantos dias você deseja alugar este carro?")
@@ -50,7 +65,7 @@ while True:
             print("Parabéns você alugou o {} por {} dias.".format(carros[cod_car][0], dias))
             alugados.append(carros.pop(cod_car))
 
-    elif op == 2:
+    elif action == 2:
         if len(alugados) == 0:
             print("Não há carros para devolver.")
         else:
@@ -66,5 +81,9 @@ while True:
     print("")
     print("===========")
     print("0 para CONTINUAR | 1 para SAIR")
-    if float(input()) == 1:
-        break
+    if float(input()) == 0:
+        main()
+    
+if __name__ == "__main__":
+    main()
+    
