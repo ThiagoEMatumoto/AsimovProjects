@@ -1,9 +1,8 @@
 from locadora import *
 
 class car:
-    def __init__(self, name, mark, year, price):
+    def __init__(self, name, mark, price):
         self.name = name
         self.mark = mark
-        self.year = year
         self.price = price
         cars.append()

@@ -19,8 +19,9 @@ def login(name, senha):
     else:
         return False
 
-def add_car():
-    pass
+def add_car(name, mark, price):
+    new_car = (name, mark, price)
+    cars.append(new_car)
 
 def remove_car():
     pass

@@ -16,7 +16,7 @@ def main():
             login_allowed = login()
         elif answer == '2':
             os.system("clear")
-            pass
+            register()
 
 if __name__ == "__main__":
     main()

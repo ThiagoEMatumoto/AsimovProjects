@@ -37,7 +37,7 @@ def register():
     user =  input("Login: ")
     password =  input("Password: ")
     confirm_password =  input("Confirm your password: ")
-    if password == confirm_password and user :
+    if password == confirm_password and (user) in users :
         users.append((user,password))
         login()
     elif password != confirm_password:
