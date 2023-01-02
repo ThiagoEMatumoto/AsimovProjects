@@ -52,17 +52,22 @@ def main():
         print("===============================")
         print("Escolha o código do carro:")
         cod_car = int(input())
+        
+        if cod_car not in enumerate(carros):
+            print('Código indisponíve, por favor informar o código correto \n')
+            sleep(2)
+            main()
+        
         print("Por quantos dias você deseja alugar este carro?")
         dias = int(input())
         os.system("clear")
 
         print(f"Você escolheu {carros[cod_car][0]} por {dias} dias.")
         print(f"O aluguel totalizaria R$ {dias * carros[cod_car][1]}. Deseja alugar?")
-
         print("0 - SIM | 1 - NÃO")
         conf = int(input())
         if conf == 0:
-            print("Parabéns você alugou o {} por {} dias.".format(carros[cod_car][0], dias))
+            print(f"Parabéns você alugou o {carros[cod_car][0]} por {dias} dias.")
             alugados.append(carros.pop(cod_car))
 
     elif action == 2:
@@ -71,16 +76,19 @@ def main():
         else:
             print("Segue a lista de carros alugados. Qual você deseja devolver?")
             mostrar_lista_de_carros(alugados)
-            print("")
-            print("Escolha o código do carro que deseja devolver:")
+            print("\n Escolha o código do carro que deseja devolver:")
             cod = int(input())
+            
+            print("Desenja devolver o carro? ")
+            print("0 - SIM | 1 - NÃO")
+            conf = int(input())
             if conf == 0:
-                print("Obrigado por devolver o carro {}".format(alugados[cod][0]))
+                print(f"Obrigado por devolver o carro {alugados[cod][0]} \n")
                 carros.append(alugados.pop(cod))
     
-    print("")
-    print("===========")
-    print("0 para CONTINUAR | 1 para SAIR")
+    print("===============================")
+    print("0 para CONTINUAR")
+    print("1 para SAIR")
     if float(input()) == 0:
         main()
     
