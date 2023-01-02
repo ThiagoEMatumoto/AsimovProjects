@@ -56,8 +56,8 @@ def main():
         dias = int(input())
         os.system("clear")
 
-        print("Você escolheu {} por {} dias.".format(carros[cod_car][0], dias))
-        print("O aluguel totalizaria R$ {}. Deseja alugar?".format(dias * carros[cod_car][1]))
+        print(f"Você escolheu {carros[cod_car][0]} por {dias} dias.")
+        print(f"O aluguel totalizaria R$ {dias * carros[cod_car][1]}. Deseja alugar?")
 
         print("0 - SIM | 1 - NÃO")
         conf = int(input())
