@@ -4,13 +4,27 @@ def welcome():
     print("°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°")
     print("°            JANKENPON            °")
     print("°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°")
-    
+
+
 def scoreboard(name: str, user_points: int, computer_points: int):
     print("°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°")
     print("°           SCOREBOARD            °") 
     print("°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°")
-    print(f"° {name} - {user_points}         °") 
-    print(f"° Computer - {computer_points}   °")
-    print("°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°")
+    print(f" {name} - {user_points}         ") 
+    print(f" Computer - {computer_points}   ")
+
+
+def make_your_choice():
+    print("___________________________________")
+    print("Make your choice:")
+    for i, choice in enumerate(jankenpon.choices):
+        print(f'{i} - {choice}')
+    print("___________________________________")
+
+
+
+
+
+
 
 

@@ -12,5 +12,14 @@ class jankenpon():
         self.player_points = 0
         self.computer_points = 0
 
-    def computer_choice(self):
+    def random_choice(self):
         return random.randint(0,2)
+    
+    def compare_choices(self, user_choice):
+        self.user_choice = self.choices[user_choice]
+        self.computer_choice = self.random_choice()
+        
+        
+        
+        
+        
