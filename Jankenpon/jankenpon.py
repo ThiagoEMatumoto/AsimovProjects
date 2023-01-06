@@ -18,8 +18,12 @@ class jankenpon():
     def compare_choices(self, user_choice):
         self.user_choice = self.choices[user_choice]
         self.computer_choice = self.random_choice()
-        
-        
+        if self.user_choice == 0:
+            pass
+        if self.user_choice == 1:
+            pass
+        if self.user_choice == 2:
+            pass
         
         
         

@@ -14,10 +14,10 @@ def scoreboard(name: str, user_points: int, computer_points: int):
     print(f" Computer - {computer_points}   ")
 
 
-def make_your_choice():
+def make_your_choice(choices):
     print("___________________________________")
     print("Make your choice:")
-    for i, choice in enumerate(jankenpon.choices):
+    for i, choice in enumerate(choices):
         print(f'{i} - {choice}')
     print("___________________________________")
 
